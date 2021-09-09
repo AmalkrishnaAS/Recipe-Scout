@@ -31,9 +31,13 @@ export default function Searchform(props) {
    
     let url=`https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=cf9cf8b7&app_key=${props.apiKey}&diet=${diet}`
     async function getResponse(){
+        if(query.length!==0)
+   {
         let result= await Axios.get(url);
         setrecipies(result.data.hits)
-        console.log(recipies);
+        console.log(recipies);}
+        else
+        alert("enter a valid query")
     }
 
     return (
