@@ -5,7 +5,7 @@ import Searchform from './Searchform';
 // import Carousel from './Components/Carousel'
 
 function App() {
-  const apiKey="45efa4a592c05bcc017f3d58f9effa82"
+  const apiKey=process.env.REACT_APP_RECIPE_API
   return (<>
     <Navbar />
     {/* <Carousel /> */}
