@@ -33,11 +33,14 @@ export default function Searchform(props) {
     async function getResponse(){
         if(query.length!==0)
    {
+       props.setProgress(10)
         let result= await Axios.get(url);
+        props.setProgress(50)
         setrecipies(result.data.hits)
         console.log(recipies);}
         else
         alert("enter a valid query")
+        props.setProgress(100)
     }
 
     return (
